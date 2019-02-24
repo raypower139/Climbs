@@ -8,15 +8,18 @@
         <thead>
           <tr>
             <th>Climb Name</th>
-            <th>Climb Lenght</th>
-
+            <th>Lenght</th>
+              <th>Percentage</th>
+              <th>County</th>
           </tr>
         </thead>
         <tbody>
           {{#each climbs}}
             <tr>
-              <td> {{amount}}   </td>
-              <td> {{method}}    </td>
+              <td> {{climb_name}} </td>
+              <td> {{climb_lenght}} </td>
+                <td> {{climb_percentage}} </td>
+                <td> {{county}} </td>
 
             </tr>
           {{/each}}
