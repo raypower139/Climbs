@@ -8,13 +8,14 @@ const server = Hapi.server({
 });
 
 server.bind({
+  users: {},
   climbs: [],
-  users:[],
 });
 
 async function init() {
   await server.register(require('inert'));
   await server.register(require('vision'));
+  await server.register(require('hapi-auth-cookie'));
 
   server.views({
     engines: {
@@ -28,9 +29,26 @@ async function init() {
     isCached: false
   });
 
+  server.auth.strategy('standard', 'cookie', {
+    password: 'secretpasswordnotrevealedtoanyone',
+    cookie: 'donation-cookie',
+    isSecure: false,
+    ttl: 24 * 60 * 60 * 1000,
+  });
+
+  server.auth.default({
+    mode: 'required',
+    strategy: 'standard',
+  });
+
+
+
   server.route(require('./routes'));
   await server.start();
   console.log(`Server running at: ${server.info.uri}`);
+
+
+
 }
 
 process.on('unhandledRejection', err => {
