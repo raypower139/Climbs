@@ -10,34 +10,35 @@
                   <input placeholder="Climb Name" type="text" name="climb_name">
               </div>
               <div class="field">
-                  <label>Climb Lenght</label>
-                  <input placeholder="Climb Lenght" type="number" name="climb_lenght">
-              </div>
-              <div class="field">
-                  <label>Climb %</label>
-                  <input type="number" name="climb_percentage">
-              </div>
-              <div class="field">
                   <label>Description</label>
                   <input type="text" name="climb_description">
               </div>
+              <div class="field">
+                  <label>Latitude</label>
+                  <input placeholder="Climb Lenght" type="number" name="climb_lat">
+              </div>
+              <div class="field">
+                  <label>Longitude</label>
+                  <input type="number" name="climb_long">
+              </div>
 
+              <div class="ui dropdown" name="category">
+                  <input type="hidden" name="category">
 
-
-              <div class="ui dropdown" name="county">
-                  <input type="hidden" name="county">
-
-              <div class="text">Select County</div>
+              <div class="text">Select Category</div>
             <i class="ui dropdown icon"></i>
             <div class="menu">
-              <div class="item">Waterford</div>
-              <div class="item">Wexford</div>
-              <div class="item">Tipperary</div>
-                <div class="item">Kilkenny</div>
-                <div class="item">Carlow</div>
+              <div class="item">5km Plus</div>
+              <div class="item">2km Plus</div>
+              <div class="item">1km Plus</div>
+                <div class="item">Less than 1km</div>
             </div>
 
           </div>
+
+              <form action='/api/images' method="post" enctype="multipart/form-data">
+                  <input type='file' name='image' />
+              </form>
               <br>
               <br>
               <br>
