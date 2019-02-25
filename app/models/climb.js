@@ -8,7 +8,11 @@ const climbSchema = new Schema({
   climb_description: String,
   climb_lat: Number,
   climb_long: Number,
-  category: String
+  category: String,
+  editor: {
+    type: Schema.Types.ObjectId,
+    ref: 'User'
+  }
 });
 
 module.exports = Mongoose.model('Climb', climbSchema);

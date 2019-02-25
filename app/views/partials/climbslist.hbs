@@ -11,6 +11,7 @@
             <th>Latitude</th>
               <th>Longitude</th>
               <th>Category</th>
+              <th>Editor</th>
           </tr>
         </thead>
         <tbody>
@@ -20,7 +21,7 @@
               <td> {{climb_lat}} </td>
                 <td> {{climb_long}} </td>
                 <td> {{category}} </td>
-
+                <td> {{editor.firstName}} {{editor.lastName}} </td>
             </tr>
           {{/each}}
         </tbody>
