@@ -3,15 +3,13 @@
 const Hapi = require('hapi');
 require('dotenv').config();
 
+
 const server = Hapi.server({
   port: 3000,
   host: 'localhost'
 });
 
-server.bind({
-  users: {},
-  climbs: [],
-});
+require('./app/models/db');
 
 async function init() {
   await server.register(require('inert'));

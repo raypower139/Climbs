@@ -17,6 +17,8 @@ const Climbs = {
   addClimb: {
     handler: function(request, h) {
       const data = request.payload;
+      var editorEmail = request.auth.credentials.id;
+      data.donor = this.users[editorEmail];
       this.climbs.push(data);
       return h.redirect('/report');
     }
