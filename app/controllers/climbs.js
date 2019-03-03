@@ -89,17 +89,11 @@ const Climbs = {
 
   viewClimb: {
     handler: async function(request, h) {
-
-      const id = request.params;
-      const climb = await Climb.findById(id);
-      climb.climb_name = climb.climb_name;
-
-      climb.climb_lat = climb.climb_lat;
-      climb.climb_long = climb.climb_long;
-
+      const id = request.params.id;
+      const climb = await Climb.findById(id).populate('editor').populate('category');
       //Log the id
       console.log(id);
-        return h.view('updateClimb', { title: 'Climbs Settings', climb: climb });
+        return h.view('updateClimb', { title: 'Climbs Settings', climb: climb});
       }
   },
 
@@ -116,6 +110,25 @@ const Climbs = {
       return h.redirect('updateClimb', { title: 'Administration Panel', climb: climb });
     }
   },
+
+  /*
+    Delete point of interest function
+    Calling the method deleteById from poi.js
+     */
+  deleteClimb: {
+
+    handler: async function(request, h){
+
+      await Climb.deleteOne(request.params.id);
+      //Log the id
+      console.log(id);
+      return h.redirect('/report');
+
+    }
+
+  },
+
+
 };
 
 module.exports = Climbs;

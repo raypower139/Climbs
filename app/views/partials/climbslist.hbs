@@ -8,30 +8,24 @@
         <thead>
           <tr>
             <th>Climb Name</th>
-            <th>Description</th>
-              <th>Latitude</th>
-              <th>Longitude</th>
-              <th>Editor</th>
+              <th>Added By</th>
               <th>Category</th>
-              <th>Update</th>
+              <th>View</th>
+              <th>Delete</th>
           </tr>
         </thead>
         <tbody>
-        <form action="/viewClimb" method="GET">
+
           {{#each climbs}}
             <tr>
               <td> {{climb_name}} </td>
-                <td> {{climb_description}} </td>
-              <td> {{climb_lat}} </td>
-                <td> {{climb_long}} </td>
                 <td> {{editor.firstName}} {{editor.lastName}} </td>
                 <td> {{category.category_name}}, {{category.category_location}}</td>
-
-                <td><button class="ui blue submit button">View</button></td>
-
+                <td> <a href="/viewClimb{{_id}}"> <i class="edit outline icon"></i> </a></td>
+                <td> <a href="/deleteClimb{{_id}}"> <i class="trash red alternate outline icon"></i> </a> </td>
             </tr>
           {{/each}}
-        </form>
+
         </tbody>
       </table>
     </article>

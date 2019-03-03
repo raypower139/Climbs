@@ -1,34 +1,36 @@
 <section class="ui raised segment">
-  <div class="ui grid ">
-    <div class="ui form twelve column">
-      <div class="ui stacked segment">
-        <form action="/addCategory" method="POST">
-          <div class="ui dropdown" name="amount">
-            <input type="hidden" name="amount">
-              <div class="field">
-                  <label>Category</label>
-                  <input placeholder="Category Name" type="text" name="category_name">
-              </div>
-              <div class="field">
-                  <label>Location</label>
-                  <input placeholder="Location" type="text" name="category_location">
-              </div>
-          </div>
-              <br>
-              <br>
-              <br>
-            <div><button class="ui blue submit button">Add Category</button></div>
-        </form>
-          {{> errors }}
-    </div>
-  </div>
-  </div>
-
     <div class="ui grid">
-        <aside class="twelve wide column">
-            <img src="" class="ui medium image">
+        <div class="ui eight wide form">
+            <form action="/addCategory" method="POST">
+            <div class="fields">
+        <div class="field">
+            <label>Category</label>
+            <input placeholder="Category Name" type="text" name="category_name">
+        </div>
+        <div class="field">
+            <label>Location</label>
+            <input placeholder="Location" type="text" name="category_location">
+
+        </div>
+        <div class="field">
+            <label>Add Category </label>
+            <div><button class="ui blue submit button column">Add Category</button></div>
+
+        </div>
+
+
+        {{> errors }}
+    </div>
+            </form>
+    </div>
+    </div>
+</section>
+<section class="ui raised segment">
+    <div class="ui grid">
+        <aside class="eight wide column">
+            <img src="/images/Mahon_Falls.jpg" class="ui large image">
         </aside>
-        <article class="eight wide column">
+        <div class="eight wide column">
             <table class="ui celled table segment">
                 <thead>
                 <tr>
@@ -45,8 +47,9 @@
                 {{/each}}
                 </tbody>
             </table>
-        </article>
+        </div>
     </div>
+
 
 </section>
 
