@@ -1,29 +1,37 @@
 <section class="ui raised segment">
   <div class="ui grid">
-    <aside class="six wide column">
+    <aside class="sixteen wide column">
       <img src="" class="ui medium image">
     </aside>
-    <article class="eight wide column">
+    <article class="sixteen wide column">
       <table class="ui celled table segment">
         <thead>
           <tr>
             <th>Climb Name</th>
-            <th>Latitude</th>
+            <th>Description</th>
+              <th>Latitude</th>
               <th>Longitude</th>
-              <th>Category</th>
               <th>Editor</th>
+              <th>Category</th>
+              <th>Update</th>
           </tr>
         </thead>
         <tbody>
+        <form action="/viewClimb" method="GET">
           {{#each climbs}}
             <tr>
               <td> {{climb_name}} </td>
+                <td> {{climb_description}} </td>
               <td> {{climb_lat}} </td>
                 <td> {{climb_long}} </td>
-                <td> {{category}} </td>
                 <td> {{editor.firstName}} {{editor.lastName}} </td>
+                <td> {{category.category_name}}, {{category.category_location}}</td>
+
+                <td><button class="ui blue submit button">View</button></td>
+
             </tr>
           {{/each}}
+        </form>
         </tbody>
       </table>
     </article>

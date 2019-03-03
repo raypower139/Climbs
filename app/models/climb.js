@@ -8,10 +8,13 @@ const climbSchema = new Schema({
   climb_description: String,
   climb_lat: Number,
   climb_long: Number,
-  category: String,
   editor: {
     type: Schema.Types.ObjectId,
     ref: 'User'
+  },
+  category:{
+    type: Schema.Types.ObjectId,
+    ref: 'Category'
   }
 });
 

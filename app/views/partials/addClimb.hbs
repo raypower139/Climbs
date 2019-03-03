@@ -1,39 +1,35 @@
 <section class="ui raised segment">
   <div class="ui grid ">
-    <div class="ui form six wide column">
+    <div class="ui eight wide form column">
       <div class="ui stacked segment">
         <form action="/addClimb" method="POST">
-          <div class="ui dropdown" name="amount">
-            <input type="hidden" name="amount">
               <div class="field">
                   <label>Climb Name</label>
                   <input placeholder="Climb Name" type="text" name="climb_name">
               </div>
               <div class="field">
                   <label>Description</label>
-                  <input type="text" name="climb_description">
+                  <textarea name="climb_description"></textarea>
               </div>
               <div class="field">
                   <label>Latitude</label>
-                  <input placeholder="Climb Lenght" type="number" name="climb_lat">
+                  <input placeholder="Latitude" type="number" step=any name="climb_lat">
               </div>
               <div class="field">
                   <label>Longitude</label>
-                  <input type="number" name="climb_long">
+                  <input placeholder="Longitude" type="number" step=any name="climb_long">
               </div>
 
-              <div class="ui dropdown" name="category">
-                  <input type="hidden" name="category">
-
-              <div class="text">Select Category</div>
-            <i class="ui dropdown icon"></i>
-            <div class="menu">
-              <div class="item">5km Plus</div>
-              <div class="item">2km Plus</div>
-              <div class="item">1km Plus</div>
-                <div class="item">Less than 1km</div>
-            </div>
-
+              <div class="grouped inline fields">
+                  <H3>Select Category</H3>
+                  {{#each categories}}
+                  <div class="field">
+                  <div class="ui radio checkbox">
+                  <input type="radio" name="category" value="{{category_name}},{{category_location}}">
+                      <label>{{category_name}}, {{category_location}}</label>
+                  </div>
+                  </div>
+                  {{/each}}
           </div>
 
 
@@ -41,14 +37,13 @@
               <br>
               <br>
             <div><button class="ui blue submit button">Add Climb</button></div>
-
-
-      </div>
         </form>
+          {{> errors }}
     </div>
-    <aside class="six wide column">
-      <img src="" class="ui medium image">
-    </aside>
+
   </div>
+      <aside class="eight wide column">
+      <img src="/images/Mahon_Falls.jpg" class="ui medium image">
+  </aside>
   </div>
 </section>

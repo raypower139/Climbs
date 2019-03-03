@@ -2,6 +2,7 @@
 
 const Accounts = require('./app/controllers/accounts');
 const Climbs = require('./app/controllers/climbs');
+const Categories = require('./app/controllers/categories');
 
 module.exports = [
   { method: 'GET', path: '/', config: Accounts.index },
@@ -13,9 +14,14 @@ module.exports = [
   { method: 'GET', path: '/settings', config: Accounts.showSettings },
   { method: 'POST', path: '/settings', config: Accounts.updateSettings },
 
+  { method: 'GET', path: '/admin', config: Climbs.admin },
   { method: 'GET', path: '/home', config: Climbs.home },
+  { method: 'GET', path: '/viewClimb', config: Climbs.viewClimb },
+  { method: 'GET', path: '/category', config: Categories.home },
   { method: 'GET', path: '/report', config: Climbs.report },
+  { method: 'GET', path: '/categoryreport', config: Categories.report },
   { method: 'POST', path: '/addClimb', config: Climbs.addClimb },
+  { method: 'POST', path: '/addCategory', config: Categories.addCategory },
   {
     method: 'GET',
     path: '/{param*}',

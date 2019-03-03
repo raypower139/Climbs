@@ -1,0 +1,33 @@
+{{> mainmenu _id="admin" }}
+
+
+<section class="ui raised segment">
+    <div class="ui grid">
+        <div class="ui ten wide column">
+            <div class="ui stacked fluid form segment">
+
+                    <h3 class="ui header">Admin Panel - Welcome {{user.firstName}} {{user.lastName}}</h3>
+                    <div class="two fields">
+
+                        <div class="two fields">
+                            <form action="/home" method="GET">
+                            <label>Add a Climb to the List</label>
+                            <button class="ui blue submit button">Add Climb</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="two fields">
+                        <form action="/category" method="GET">
+                        <label>Add a Category of Climb</label>
+                        <button class="ui blue submit button">Add Category</button>
+                        </form>
+                    </div>
+
+
+            </div>
+        </div>
+        <aside class="ui five wide column">
+            <img src="" class="ui medium image">
+        </aside>
+    </div>
+</section>
