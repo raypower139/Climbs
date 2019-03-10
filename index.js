@@ -5,8 +5,7 @@ require('dotenv').config();
 
 
 const server = Hapi.server({
-  port: 3000,
-  host: 'localhost'
+  port: process.env.PORT || 3000,
 });
 
 require('./app/models/db');

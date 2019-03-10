@@ -15,7 +15,8 @@ const climbSchema = new Schema({
   category:{
     type: Schema.Types.ObjectId,
     ref: 'Category'
-  }
+  },
+
 });
 
 module.exports = Mongoose.model('Climb', climbSchema);

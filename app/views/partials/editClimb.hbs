@@ -1,0 +1,34 @@
+<section class="ui raised segment">
+    <div class="ui grid ">
+    <div class="ui eight wide column">
+    <div class="ui stacked fluid form segment">
+        <form action="/updateClimb" method="POST">
+            <h3 class="ui header">Edit Climb Details</h3>
+            <div class="field">
+                <label>Climb Name:</label>
+                <input value="{{climb.climb_name}}" type="text" name="climb_name">
+                </div>
+            <div class="field">
+                <label>Description</label>
+                <input value="{{climb.climb_description}}" type="text" name="climb_description">
+            </div>
+            <div class="field">
+                <label>Latitude</label>
+                <input value="{{climb.climb_lat}}" type="text" name="climb_lat">
+                </div>
+                <div class="field">
+                    <label>Longitude</label>
+                    <input value="{{climb.climb_long}}" type="text" name="climb_long">
+                </div>
+                <button class="ui blue submit button">Update</button>
+        </form>
+    </div>
+    </div>
+</div>
+<div>
+      <aside class="ui six wide column">
+          <i class="header">Climb Image:</i>
+          <img src="/images/Mahon_Falls.jpg" class="ui large image">
+  </aside>
+    </div>
+</section>
