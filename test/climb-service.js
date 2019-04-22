@@ -37,6 +37,19 @@ class ClimbService {
     return response.data;
   }
 
+  async deleteAllCategories() {
+    const response = await axios.delete(this.baseUrl + '/api/categoriesapi');
+    return response.data;
+  }
+
+  async deleteOneCategory(id) {
+    const response = await axios.delete(this.baseUrl + '/api/categoriesapi/' + id);
+    return response.data;
+  }
+
+
+
+
   async getUsers() {
     const response = await axios.get(this.baseUrl + '/api/users');
     return response.data;
