@@ -1,0 +1,17 @@
+{
+  "categories": [
+    {
+      "category_name": "Comeragh Mountains",
+      "category_location": "County Waterford"
+    },
+    {
+      "category_name": "Wicklow Mountains",
+      "category_location": "County Wicklow"
+    }
+  ],
+  "newCategory":
+  {
+    "category_name": "Galtee Mountains",
+    "category_location": "County Tipperary"
+  }
+}

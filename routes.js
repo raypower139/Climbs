@@ -21,9 +21,12 @@ module.exports = [
   { method: 'GET', path: '/admin', config: Climbs.admin },
   { method: 'GET', path: '/home', config: Climbs.home },
   { method: 'GET', path: '/viewClimb{id}', config: Climbs.viewClimb },
+  { method: 'GET', path: '/editClimb{id}', config: Climbs.editClimb },
+  { method: 'POST', path: '/editClimb{id}', config: Climbs.updateClimb },
   { method: 'GET', path: '/report', config: Climbs.report },
   { method: 'POST', path: '/addClimb', config: Climbs.addClimb },
-  { method: 'DELETE', path: '/deleteClimb/:{id}', config: Climbs.deleteClimb },
+  { method: 'DELETE', path: '/deleteClimb{climb}', config: Climbs.deleteClimb },
+
   {
     method: 'GET',
     path: '/{param*}',

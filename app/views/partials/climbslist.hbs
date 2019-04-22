@@ -11,6 +11,7 @@
               <th>Added By</th>
               <th>Category</th>
               <th>View</th>
+              <th>Edit</th>
               <th>Delete</th>
           </tr>
         </thead>
@@ -21,7 +22,8 @@
               <td> {{climb_name}} </td>
                 <td> {{editor.firstName}} {{editor.lastName}} </td>
                 <td> {{category.category_name}}, {{category.category_location}}</td>
-                <td> <a href="/viewClimb{{_id}}"> <i class="edit outline icon"></i> </a></td>
+                <td> <a href="/viewClimb{{_id}}"> <i class="file alternate icon"></i> </a></td>
+                <td> <a href="/editClimb{{_id}}"> <i class="edit outline icon"></i> </a></td>
                 <td> <a href="/deleteClimb{{_id}}"> <i class="trash red alternate outline icon"></i> </a> </td>
             </tr>
           {{/each}}

@@ -5,8 +5,7 @@ require('dotenv').config();
 
 
 const server = Hapi.server({
-  port: 3000,
-  host: 'localhost'
+  port: process.env.PORT || 3000,
 });
 
 require('./app/models/db');
@@ -45,6 +44,7 @@ async function init() {
 
 
   server.route(require('./routes'));
+  server.route(require('./routesapi'));
   await server.start();
   console.log(`Server running at: ${server.info.uri}`);
 
