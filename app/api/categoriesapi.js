@@ -43,7 +43,7 @@ const Categories = {
   deleteAll: {
     auth: false,
     handler: async function(request, h) {
-      await Category.remove({});
+      await Category.deleteMany({});
       return { success: true };
     }
   },
