@@ -88,7 +88,7 @@ const Accounts = {
         email: Joi.string()
           .email()
           .required(),
-        password: Joi.string().required()
+        password: Joi.string().min(3).required()
       },
       options: {
         abortEarly: false,
@@ -153,7 +153,7 @@ const Accounts = {
         email: Joi.string()
           .email()
           .required(),
-        password: Joi.string().required()
+        password: Joi.string().min(3).required()
       },
       options: {
         abortEarly: false

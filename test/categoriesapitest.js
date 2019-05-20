@@ -1,5 +1,7 @@
 'use strict';
 
+
+
 const _ = require('lodash');
 const assert = require('chai').assert;
 const ClimbService = require('./climb-service');
@@ -9,8 +11,21 @@ suite('Categories API tests', function () {
 
   let categories = fixtures.categories;
   let newCategory = fixtures.newCategory;
+  let newUser = fixtures.newUser;
 
-  const climbService = new ClimbService('http://localhost:3000');
+  /*const climbService = new ClimbService(fixtures.climbService);*/
+  const climbService = new ClimbService(fixtures.climbService);
+
+  suiteSetup(async function() {
+    await climbService.deleteAllUsers();
+    const returnedUser = await climbService.createUser(newUser);
+    const response = await climbService.authenticate(newUser);
+  });
+
+  suiteTeardown(async function() {
+    await climbService.deleteAllUsers();
+    climbService.clearAuth();
+  });
 
   setup(async function () {
     await climbService.deleteAllCategories();
@@ -19,6 +34,7 @@ suite('Categories API tests', function () {
   teardown(async function () {
     await climbService.deleteAllCategories();
   });
+
 
   test('create a category', async function () {
     const returnedCategory = await climbService.createCategory(newCategory);

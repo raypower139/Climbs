@@ -8,6 +8,7 @@ module.exports = [
   { method: 'POST', path: '/api/categoriesapi', config: Categories.create },
   { method: 'DELETE', path: '/api/categoriesapi/{id}', config: Categories.deleteOne },
   { method: 'DELETE', path: '/api/categoriesapi', config: Categories.deleteAll },
+  { method: 'DELETE', path: '/api/categoriesapi/{id}/climbs', config: Climbs.deleteClimbs },
 
   /* Users */
   { method: 'GET', path: '/api/users', config: Users.find },
@@ -15,6 +16,7 @@ module.exports = [
   { method: 'POST', path: '/api/users', config: Users.create },
   { method: 'DELETE', path: '/api/users/{id}', config: Users.deleteOne },
   { method: 'DELETE', path: '/api/users', config: Users.deleteAll },
+  { method: 'POST', path: '/api/users/authenticate', config: Users.authenticate },
 
   /* Climbs */
   { method: 'GET', path: '/api/climbsapi', config: Climbs.findAll },

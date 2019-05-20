@@ -92,9 +92,9 @@ class ClimbService {
   }
 
   /* DONATIONS */
-  async addClimb(id, climb) {
+  async makeClimb(id, climb) {
     try {
-      const response = axios.post('/api/categoriesapi/' + id + '/climbs', climb);
+      const response = axios.post(this.baseUrl + '/api/categoriesapi/' + id + '/climbs', climb);
       return repsonse.data;
     } catch (e) {
       return null;
@@ -103,7 +103,7 @@ class ClimbService {
 
   async getClimbs(id) {
     try {
-      const response = await axios.get('/api/categoriesapi/' + id + '/climbs');
+      const response = await axios.get(this.baseUrl + '/api/categoriesapi/' + id + '/climbs');
       return repsonse.data;
     } catch (e) {
       return null;
@@ -112,13 +112,35 @@ class ClimbService {
 
   async deleteAllClimbs() {
     try {
-      const response = await axios.delete('/api/climbsapi');
+      const response = await axios.delete(this.baseUrl + '/api/climbsapi');
       return repsonse.data;
     } catch (e) {
       return null;
     }
   }
 
+  async deleteClimbs(categoryId) {
+    try {
+      const response = await axios.delete(this.baseUrl + '/api/categoriesapi/' + categoryId + '/climbs');
+      return response.data;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  async authenticate(user) {
+    try {
+      const response = await axios.post(this.baseUrl + '/api/users/authenticate', user);
+      axios.defaults.headers.common['Authorization'] = 'Bearer ' + response.data.token;
+      return response.data;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  async clearAuth(user) {
+    axios.defaults.headers.common['Authorization'] = '';
+  }
 
 }
 

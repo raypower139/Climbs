@@ -49,22 +49,19 @@
       "climb_name": "Seskin",
       "climb_description": "Seskin is a 2km climb at 10% rising out of Carrick on Suir",
       "climb_lat": 52.233798,
-      "climb_long": -7.548338,
-      "editor": "5c7c5a59e65223283c5a8a4c"
+      "climb_long": -7.548338
     },
     {
       "climb_name": "Seskin2",
       "climb_description": "Seskin is a 2km climb at 10% rising out of Carrick on Suir",
       "climb_lat": 52.233798,
-      "climb_long": -7.548338,
-      "editor": "5c7c5a59e65223283c5a8a4c"
+      "climb_long": -7.548338
     },
     {
       "climb_name": "Seskin3",
       "climb_description": "Seskin is a 2km climb at 10% rising out of Carrick on Suir",
       "climb_lat": 52.233798,
-      "climb_long": -7.548338,
-      "editor": "5c7c5a59e65223283c5a8a4c"
+      "climb_long": -7.548338
     }
   ]
 }

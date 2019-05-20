@@ -1,4 +1,5 @@
 'use strict';
+
 const Category = require('../models/category');
 const User = require('../models/user');
 const Joi = require('joi');
@@ -13,8 +14,8 @@ const Categories = {
     handler: async function(request, h) {
       const categories = await Category.find()
       return h.view('categoryreport', {
-          title: 'Categories',
-          categories: categories
+        title: 'Categories',
+        categories: categories
       });
     }
   },

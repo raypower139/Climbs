@@ -36,6 +36,14 @@ const Climbs = {
     }
   },
 
+  deleteClimbs: {
+    auth: false,
+    handler: async function(request, h) {
+      await Climb.deleteMany({category: request.params.id });
+      return { success: true };
+    }
+  },
+
   deleteAll: {
     auth: false,
     handler: async function(request, h) {

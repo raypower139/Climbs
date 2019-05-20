@@ -2,11 +2,14 @@
 
 const Category = require('../models/category');
 const Boom = require('boom');
+const jwt = require('jsonwebtoken');
 
 const Categories = {
 
   find: {
-    auth: false,
+    auth: {
+      strategy: 'jwt',
+    },
     handler: async function(request, h) {
       const categories = await Category.find();
       return categories;
@@ -14,7 +17,9 @@ const Categories = {
   },
 
   findOne: {
-    auth: false,
+    auth: {
+      strategy: 'jwt',
+    },
     handler: async function(request, h) {
       try {
       const categories = await Category.findOne({ _id: request.params.id });
@@ -29,7 +34,9 @@ const Categories = {
   },
 
   create: {
-    auth: false,
+    auth: {
+      strategy: 'jwt',
+    },
     handler: async function(request, h) {
       const newCategory = new Category(request.payload);
       const category = await newCategory.save();
@@ -41,7 +48,9 @@ const Categories = {
   },
 
   deleteAll: {
-    auth: false,
+    auth: {
+      strategy: 'jwt',
+    },
     handler: async function(request, h) {
       await Category.deleteMany({});
       return { success: true };
@@ -49,7 +58,9 @@ const Categories = {
   },
 
   deleteOne: {
-    auth: false,
+    auth: {
+      strategy: 'jwt',
+    },
     handler: async function(request, h) {
       const response = await Category.deleteOne({ _id: request.params.id });
       if (response.deletedCount == 1) {
