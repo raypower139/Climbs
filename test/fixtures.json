@@ -1,0 +1,67 @@
+{
+  "climbService": "http://localhost:3000",
+  "users": [
+    {
+      "firstName": "Homer",
+      "lastName": "Simpson",
+      "email": "homer@simpson.com",
+      "password": "secret"
+    },
+    {
+      "firstName": "Marge",
+      "lastName": "Simpson",
+      "email": "marge@simpson.com",
+      "password": "secret"
+    },
+    {
+      "firstName": "Bart",
+      "lastName": "Simpson",
+      "email": "bart@simpson.com",
+      "password": "secret"
+    }
+  ],
+  "categories": [
+    {
+      "category_name": "Comeragh Mountains",
+      "category_location": "County Waterford"
+    },
+    {
+      "category_name": "Wicklow Mountains",
+      "category_location": "County Wicklow"
+    }
+  ],
+  "newCategory":
+  {
+    "category_name": "Galtee Mountains",
+    "category_location": "County Tipperary"
+  },
+
+  "newUser":
+  {
+    "firstName": "Maggie",
+    "lastName": "Simpson",
+    "email": "maggie@simpson.com",
+    "password": "secret"
+  },
+
+  "climbs": [
+    {
+      "climb_name": "Seskin",
+      "climb_description": "Seskin is a 2km climb at 10% rising out of Carrick on Suir",
+      "climb_lat": 52.233798,
+      "climb_long": -7.548338
+    },
+    {
+      "climb_name": "Seskin2",
+      "climb_description": "Seskin is a 2km climb at 10% rising out of Carrick on Suir",
+      "climb_lat": 52.233798,
+      "climb_long": -7.548338
+    },
+    {
+      "climb_name": "Seskin3",
+      "climb_description": "Seskin is a 2km climb at 10% rising out of Carrick on Suir",
+      "climb_lat": 52.233798,
+      "climb_long": -7.548338
+    }
+  ]
+}
